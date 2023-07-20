@@ -5,10 +5,10 @@ echo 'defaultyes=1' | sudo tee -a /etc/dnf/dnf.conf
 
 # Install GNOME base
 sudo dnf upgrade -y
-sudo dnf install @base-x gnome-shell gnome-terminal gnome-tweaks nautilus neofetch -y
+sudo dnf install @base-x gnome-shell gnome-terminal gnome-software gnome-tweaks nautilus neofetch -y
 
 # Extras - 'Open in Terminal', user-directories and GNOME extensions connector
-sudo dnf install gnome-terminal-nautilus xdg-user-dirs xdg-user-dirs-gtk gnome-browser-connector -y
+sudo dnf install gnome-terminal-nautilus xdg-user-dirs xdg-user-dirs-gtk gnome-browser-connector unzip -y
 
 # RPMfusion
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
