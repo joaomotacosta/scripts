@@ -25,6 +25,19 @@ sudo dnf install @virtualization -y
 # Remove GNOME Tour
 sudo dnf remove gnome-tour -y
 
+# Orchis theme
+sudo dnf install gnome-themes-extra gtk-murrine-engine sassc -y
+git clone https://github.com/vinceliuice/Orchis-theme
+cd Orchis-theme
+./install.sh -t all -l --tweaks solid compact black primary macos submenu --shell 44
+cd ~
+
+# Tela icons
+git clone https://github.com/vinceliuice/Tela-icon-theme
+cd Tela-icon-theme
+./install.sh -a
+cd ~
+
 # Set graphical target and setup autologin
 sudo systemctl set-default graphical.target
 sudo nano /etc/gdm/custom.conf
