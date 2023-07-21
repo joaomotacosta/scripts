@@ -29,7 +29,7 @@ sudo dnf remove gnome-tour -y
 sudo dnf install gnome-themes-extra gtk-murrine-engine sassc -y
 git clone https://github.com/vinceliuice/Orchis-theme
 cd Orchis-theme
-./install.sh -t all -l --tweaks solid compact black primary macos submenu --shell 44
+./install.sh -t all -c dark -s compact -l --tweaks solid compact black primary macos submenu --shell 44
 cd ~
 
 # Tela icons
@@ -38,6 +38,8 @@ cd Tela-icon-theme
 ./install.sh -a
 cd ~
 
-# Set graphical target and setup autologin
+# Set graphical target, autologin and reboot
 sudo systemctl set-default graphical.target
-sudo nano /etc/gdm/custom.conf
+sudo sed -i '6iAutomaticLoginEnable=True' /etc/gdm/custom.conf
+sudo sed -i '7iAutomaticLogin=jcosta' /etc/gdm/custom.conf
+reboot
