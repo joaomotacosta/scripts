@@ -22,6 +22,10 @@ flatpak install com.brave.Browser com.discordapp.Discord com.spotify.Client com.
 # Virtualization
 sudo dnf install @virtualization -y
 
+# Intel-undervolt
+wget https://kojipkgs.fedoraproject.org//packages/intel-undervolt/1.7/14.fc38/x86_64/intel-undervolt-1.7-14.fc38.x86_64.rpm
+sudo rpm -i ./intel-undervolt-1.7-14.fc38.x86_64.rpm -y
+
 # Remove GNOME Tour
 sudo dnf remove gnome-tour -y
 
