@@ -10,6 +10,15 @@ sudo dnf install @base-x gnome-shell gnome-terminal gnome-software gnome-tweaks 
 # Extras - 'Open in Terminal', user-directories and GNOME extensions connector
 sudo dnf install gnome-terminal-nautilus xdg-user-dirs xdg-user-dirs-gtk gnome-browser-connector unzip -y
 
+# intel-undervolt
+sudo dnf install intel-undervolt -y
+
+# Virtualization
+sudo dnf install @virtualization -y
+
+# Remove GNOME Tour
+sudo dnf remove gnome-tour -y
+
 # RPMfusion
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
@@ -18,16 +27,6 @@ sudo dnf install flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gnome.TextEditor org.gnome.Extensions org.gnome.Calculator org.gnome.Connections -y
 flatpak install com.brave.Browser com.discordapp.Discord com.spotify.Client com.visualstudio.code io.github.shiftey.Desktop org.keepassxc.KeePassXC -y
-
-# Virtualization
-sudo dnf install @virtualization -y
-
-# Intel-undervolt
-wget https://kojipkgs.fedoraproject.org//packages/intel-undervolt/1.7/14.fc38/x86_64/intel-undervolt-1.7-14.fc38.x86_64.rpm
-sudo rpm -i ./intel-undervolt-1.7-14.fc38.x86_64.rpm -y
-
-# Remove GNOME Tour
-sudo dnf remove gnome-tour -y
 
 # Orchis theme
 sudo dnf install gnome-themes-extra gtk-murrine-engine sassc -y
