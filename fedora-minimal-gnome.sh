@@ -10,6 +10,9 @@ sudo dnf install @base-x gnome-shell gnome-terminal gnome-software gnome-tweaks 
 # Extras - 'Open in Terminal', user-directories and GNOME extensions connector
 sudo dnf install gnome-terminal-nautilus xdg-user-dirs xdg-user-dirs-gtk gnome-browser-connector unzip -y
 
+# Firmware - Intel Wifi (Make sure you have an internet connection)
+sudo dnf install iwl7260-firmware -y
+
 # intel-undervolt
 sudo dnf install intel-undervolt -y
 
