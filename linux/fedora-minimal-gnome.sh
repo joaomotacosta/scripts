@@ -16,8 +16,33 @@ sudo dnf install iwl7260-firmware -y
 # intel-undervolt
 sudo dnf install intel-undervolt -y
 
+# auto-cpufreq
+git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+cd auto-cpufreq && sudo ./auto-cpufreq-installer
+
 # Virtualization
 sudo dnf install @virtualization -y
+
+# GNOME
+sudo dnf install gnome-extensions-app gnome-calculator gnome-disk-utility gedit -y
+
+# Brave
+sudo dnf install dnf-plugins-core
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+sudo dnf install brave-browser -y
+
+# LibreOffice
+sudo dnf install libreoffice-calc libreoffice-impress libreoffice-writer -y
+
+# scrcpy
+sudo dnf install scrcpy -y
+
+# VScode
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+sudo dnf check-update
+sudo dnf install code -y
 
 # Remove GNOME Tour
 sudo dnf remove gnome-tour -y
@@ -28,21 +53,24 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 # Flatpak
 sudo dnf install flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gnome.TextEditor org.gnome.Extensions org.gnome.Calculator org.gnome.Connections -y
-flatpak install com.brave.Browser com.discordapp.Discord com.spotify.Client com.visualstudio.code io.github.shiftey.Desktop org.keepassxc.KeePassXC -y
+flatpak install flathub -y
 
 # Orchis theme
 sudo dnf install gnome-themes-extra gtk-murrine-engine sassc -y
-git clone https://github.com/vinceliuice/Orchis-theme
-cd Orchis-theme
-./install.sh -t all -c dark -s compact -l --tweaks solid compact black primary macos submenu --shell 44
-cd ~
+# git clone https://github.com/vinceliuice/Orchis-theme
+# cd Orchis-theme
+# ./install.sh -t all -c dark -s compact -l --tweaks solid compact black primary macos submenu --shell 44
+# cd ~
 
 # Tela icons
-git clone https://github.com/vinceliuice/Tela-icon-theme
-cd Tela-icon-theme
-./install.sh -a
-cd ~
+# git clone https://github.com/vinceliuice/Tela-icon-theme
+# cd Tela-icon-theme
+# ./install.sh -a
+# cd ~
+
+# Theming
+git clone https://github.com/NeuronSooup/gnome-topbar-le-dots
+git clone https://github.com/rose-pine/gtk
 
 # Set graphical target, autologin and reboot
 sudo systemctl set-default graphical.target
