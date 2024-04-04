@@ -1,5 +1,5 @@
 # DNF flags
-# echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
+echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
 echo 'max_parallel_downloads=10'| sudo tee -a /etc/dnf/dnf.conf
 echo 'defaultyes=1' | sudo tee -a /etc/dnf/dnf.conf
 
@@ -11,27 +11,7 @@ sudo dnf install @base-x gnome-shell gnome-terminal gnome-software gnome-tweaks 
 sudo dnf install gnome-terminal-nautilus xdg-user-dirs xdg-user-dirs-gtk gnome-browser-connector unzip -y
 
 # GNOME - Apps
-sudo dnf install gnome-extensions-app gnome-calculator gnome-disk-utility gedit -y
-
-# Hardware - Intel Wifi (Make sure you have an internet connection)
-sudo dnf install iwl7260-firmware -y
-
-# Hardware - intel-undervolt
-sudo dnf install intel-undervolt -y
-
-# Battery - TLP
-sudo dnf install tlp tlp-rdw -y
-sudo dnf remove power-profiles-daemon -y
-sudo systemctl enable tlp.service
-sudo systemctl mask system-rdfkill.service systemd-rfkill.socket
-
-# Battery - auto-cpufreq
-git clone https://github.com/AdnanHodzic/auto-cpufreq.git
-cd auto-cpufreq && sudo ./auto-cpufreq-installer
-
-# Battery - powertop
-sudo dnf install powertop -y
-sudo powertop --auto-tune
+sudo dnf install gnome-extensions-app gnome-calculator gnome-disk-utility gedit firefox -y
 
 # Apps - Virtualization
 sudo dnf install @virtualization -y
