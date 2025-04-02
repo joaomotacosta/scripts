@@ -16,7 +16,11 @@ sudo dnf install @hardware-support -y
 sudo dnf install fwupdmgr intel-undervolt -y
 sudo dnf copr enable sneexy/python-validity -y
 sudo dnf install open-fprintd fprintd-clients fprintd-clients-pam python3-validity -y
-fprintd-enroll
+sudo validity-sensors-firmware
+sudo python3 /usr/share/python-validity/playground/factory-reset.py
+sudo systemctl enable python3-validity
+sudo authselect enable-feature with-fingerprint
+sudo authselect apply-changes
 
 # Battery
 sudo dnf install tlp tlp-rdw powertop -y
