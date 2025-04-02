@@ -13,7 +13,10 @@ sudo dnf remove gnome-tour -y
 
 # Hardware
 sudo dnf install @hardware-support -y
-sudo dnf install fwupdmgr intel-undervolt fprintd -y
+sudo dnf install fwupdmgr intel-undervolt -y
+sudo dnf copr enable sneexy/python-validity
+sudo dnf install open-fprintd fprintd-clients fprintd-clients-pam python3-validity
+fprintd-enroll
 
 # Battery
 sudo dnf install tlp tlp-rdw powertop -y
