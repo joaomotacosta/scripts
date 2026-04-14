@@ -17,4 +17,4 @@ taskkill /f /im explorer.exe
 start explorer.exe
 
 :: Show a harmless message
-msg * "Foste visitado pelo Friendly Hacker 👀"
+msg * "Foste visitado pelo Friendly Hacker MUAHAHAHA"
