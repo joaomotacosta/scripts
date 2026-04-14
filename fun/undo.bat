@@ -1,3 +1,5 @@
+@echo off
+
 :: Restore mouse buttons
 rundll32 user32.dll,SwapMouseButton
 

@@ -1,3 +1,5 @@
+@echo off
+
 :: Download wallpaper from GitHub
 set imgPath=%TEMP%\rekt.png
 powershell -Command "Invoke-WebRequest 'https://raw.githubusercontent.com/joaomotacosta/scripts/refs/heads/main/fun/rekt.png' -OutFile '%imgPath%'"
